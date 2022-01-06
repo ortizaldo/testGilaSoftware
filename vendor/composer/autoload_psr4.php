@@ -12,6 +12,7 @@ return array(
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Slim\\Psr7\\' => array($vendorDir . '/slim/psr7/src'),
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
+    'Selective\\Validation\\' => array($vendorDir . '/selective/validation/src'),
     'Selective\\BasePath\\' => array($vendorDir . '/selective/basepath/src'),
     'Sapphirecat\\Slim4HttpInteropAdapter\\' => array($vendorDir . '/sapphirecat/slim4-http-interop-adapter/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
@@ -34,4 +35,6 @@ return array(
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'DI\\' => array($vendorDir . '/php-di/php-di/src'),
+    'App\\Test\\' => array($baseDir . '/tests'),
+    'App\\' => array($baseDir . '/src'),
 );

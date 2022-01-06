@@ -1,4 +1,7 @@
 <?php
+
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Log\LoggerInterface;
 use Selective\BasePath\BasePathMiddleware;
 use Slim\App;
 use Slim\Middleware\ErrorMiddleware;

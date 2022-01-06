@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '71986edd81b6e88511e58d6f6f90051f42bdc957',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '71986edd81b6e88511e58d6f6f90051f42bdc957',
             'dev_requirement' => false,
         ),
         'doctrine/instantiator' => array(
@@ -504,6 +504,15 @@
             'install_path' => __DIR__ . '/../selective/basepath',
             'aliases' => array(),
             'reference' => '63961fbfcaf492bd0ae8e40653f6c3c750c2f8ad',
+            'dev_requirement' => false,
+        ),
+        'selective/validation' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../selective/validation',
+            'aliases' => array(),
+            'reference' => '1279f5299d0b50dec0701ca7c496f79dee997ef6',
             'dev_requirement' => false,
         ),
         'slim/psr7' => array(

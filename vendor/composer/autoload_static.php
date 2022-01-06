@@ -10,8 +10,8 @@ class ComposerStaticInitf7bf6934922691ce3956f40f939ccc44
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '07d7f1a47144818725fd8d91a907ac57' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/create_uploaded_file.php',
         'da94ac5d3ca7d2dbab84ce561ce72bfd' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/marshal_headers_from_sapi.php',
         '3d97c8dcdfba8cb85d3b34f116bb248b' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/marshal_method_from_sapi.php',
@@ -50,6 +50,7 @@ class ComposerStaticInitf7bf6934922691ce3956f40f939ccc44
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Slim\\Psr7\\' => 10,
             'Slim\\' => 5,
+            'Selective\\Validation\\' => 21,
             'Selective\\BasePath\\' => 19,
             'Sapphirecat\\Slim4HttpInteropAdapter\\' => 36,
         ),
@@ -100,6 +101,11 @@ class ComposerStaticInitf7bf6934922691ce3956f40f939ccc44
             'DeepCopy\\' => 9,
             'DI\\' => 3,
         ),
+        'A' => 
+        array (
+            'App\\Test\\' => 9,
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -128,6 +134,10 @@ class ComposerStaticInitf7bf6934922691ce3956f40f939ccc44
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'Selective\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/selective/validation/src',
         ),
         'Selective\\BasePath\\' => 
         array (
@@ -218,6 +228,14 @@ class ComposerStaticInitf7bf6934922691ce3956f40f939ccc44
         'DI\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/php-di/src',
+        ),
+        'App\\Test\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
