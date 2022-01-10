@@ -49,13 +49,28 @@ class ReaderRepository
     return $row;
   }
 
-  public function getCars()
+  public function getCarById(int $carId): array
+  {
+    $sql = "SELECT * FROM cars WHERE idCar = :idCar;";
+    $statement = $this->connection->prepare($sql);
+    $statement->execute(['idCar' => $carId]);
+
+    $row = $statement->fetch();
+
+    if (!$row) {
+      throw new DomainException(sprintf('Type car not found: %s', $carId));
+    }
+
+    return $row;
+  }
+
+  public function getCars(): array
   {
     $sql = "SELECT * FROM cars";
     $statement = $this->connection->prepare($sql);
     $statement->execute();
 
-    $row = $statement->fetch();
+    $row = $statement->fetchAll();
     if (!$row) {
       throw new DomainException(sprintf('Type car not found: %s', ''));
     }

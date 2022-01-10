@@ -43,6 +43,22 @@ final class Car
     return $carId;
   }
 
+  public function updateCar(array $data, int $id)
+  {
+    // Update car
+    $carId = $this->repository->updateCar($data, $id);
+
+    return $carId;
+  }
+
+  public function deleteCar(int $data)
+  {
+    // Delete car
+    $carId = $this->repository->deleteCar($data);
+
+    return $carId;
+  }
+
   /**
    * Create a new type car.
    *
