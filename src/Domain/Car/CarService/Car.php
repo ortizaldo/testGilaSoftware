@@ -3,6 +3,7 @@
 namespace App\Domain\Car\CarService;
 
 use App\Domain\Car\CarRepository\Repository;
+use App\Domain\Car\CarRepository\ReaderRepository;
 use App\Exception\ValidationException;
 
 /**
@@ -14,15 +15,17 @@ final class Car
    * @var Repository
    */
   private $repository;
+  private $readerRepository;
 
   /**
    * The constructor.
    *
    * @param Repository $repository The repository
    */
-  public function __construct(Repository $repository)
+  public function __construct(Repository $repository, ReaderRepository $readerRepository)
   {
     $this->repository = $repository;
+    $this->readerRepository = $readerRepository;
   }
 
   /**
@@ -53,5 +56,18 @@ final class Car
     $carId = $this->repository->insertTypeCar($data);
 
     return $carId;
+  }
+
+  /**
+   * List for all cars.
+   *
+   * @param array $data The form data
+   *
+   * @return array The all cars
+   */
+  public function listCar()
+  {
+    $cars = $this->readerRepository->getCars();
+    return $cars;
   }
 }

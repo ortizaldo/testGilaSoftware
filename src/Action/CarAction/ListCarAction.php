@@ -7,7 +7,7 @@ use PDOException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-final class CreateCarAction
+final class ListCarAction
 {
   private $car;
 
@@ -21,14 +21,12 @@ final class CreateCarAction
     ResponseInterface $response
   ): ResponseInterface {
     try {
-      // Collect input from the HTTP request
-      $data = (array)$request->getParsedBody();
       // Invoke the Domain with inputs and retain the result
-      $carId = $this->car->createCar($data);
+      $cars = $this->car->listCar();
 
       // Transform the result into the JSON representation
       $result = [
-        'data' => $carId
+        'data' => $cars
       ];
 
       // Build the HTTP response
@@ -36,7 +34,7 @@ final class CreateCarAction
 
       return $response
       ->withHeader('Content-Type', 'application/json')
-      ->withStatus(200);
+      ->withStatus(201);
     } catch (PDOException $e) {
       $error = array(
         "data" => $e->getMessage()

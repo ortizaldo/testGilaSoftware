@@ -48,4 +48,17 @@ class ReaderRepository
 
     return $row;
   }
+
+  public function getCars()
+  {
+    $sql = "SELECT * FROM cars";
+    $statement = $this->connection->prepare($sql);
+    $statement->execute();
+
+    $row = $statement->fetch();
+    if (!$row) {
+      throw new DomainException(sprintf('Type car not found: %s', ''));
+    }
+    return $row;
+  }
 }
