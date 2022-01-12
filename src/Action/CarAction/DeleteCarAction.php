@@ -35,6 +35,8 @@ final class DeleteCarAction
 
       return $response
       ->withHeader('Content-Type', 'application/json')
+      ->withHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE')
+      ->withHeader('Access-Control-Allow-Origin', '*')
       ->withStatus(200);
     } catch (PDOException $e) {
       $error = array(
@@ -44,6 +46,8 @@ final class DeleteCarAction
       $response->getBody()->write(json_encode($error));
       return $response
         ->withHeader('content-type', 'application/json')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE')
+        ->withHeader('Access-Control-Allow-Origin', '*')
         ->withStatus(500);
     }
   }
