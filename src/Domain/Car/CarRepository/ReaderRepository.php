@@ -66,7 +66,15 @@ class ReaderRepository
 
   public function getCars(): array
   {
-    $sql = "SELECT * FROM cars";
+    $sql = "SELECT 
+    c.carName,
+    t.typeName,
+    c.reels,
+    c.enginePower,
+    c.motor,
+    c.color
+    FROM cars as c, typeCar as t
+    WHERE c.idCar = t.idTypeCar";
     $statement = $this->connection->prepare($sql);
     $statement->execute();
 
