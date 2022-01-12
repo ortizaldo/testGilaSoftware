@@ -86,4 +86,10 @@ final class Car
     $cars = $this->readerRepository->getCars();
     return $cars;
   }
+
+  public function getCarId(int $carId)
+  {
+    $cars = $this->readerRepository->getCarById($carId);
+    return $cars;
+  }
 }

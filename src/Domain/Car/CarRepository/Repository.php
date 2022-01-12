@@ -33,11 +33,18 @@ final class Repository
      * @return int The new ID
      */
     public function insertCar(array $car)
-    {   
+    {
         // get type car
+        $typeCar = 1;
+        if ((int)$car['reels'] > 2) {
+            # code...
+            $typeCar = $this->readerRepository->getCarTypeByType(1);
+        }else{
+            $typeCar = $this->readerRepository->getCarTypeByType(2);
+        }
         $row = [
             'carName' => $car['carName'],
-            'typeCar' => $car['typeCar'],
+            'typeCar' => $typeCar['idTypeCar'],
             'reels' => $car['reels'],
             'enginePower' => $car['enginePower'],
             'motor' => $car['motor'],

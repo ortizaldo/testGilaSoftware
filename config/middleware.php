@@ -7,6 +7,7 @@ use Slim\App;
 use Slim\Middleware\ErrorMiddleware;
 
 return function (App $app) {
+    header('Access-Control-Allow-Origin', '*');
     // Parse json, form data and xml
     $app->addBodyParsingMiddleware();
 

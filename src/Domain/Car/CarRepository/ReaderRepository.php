@@ -67,6 +67,7 @@ class ReaderRepository
   public function getCars(): array
   {
     $sql = "SELECT 
+    c.idCar,
     c.carName,
     t.typeName,
     c.reels,
@@ -74,14 +75,11 @@ class ReaderRepository
     c.motor,
     c.color
     FROM cars as c, typeCar as t
-    WHERE c.idCar = t.idTypeCar";
+    WHERE c.typeCar = t.idTypeCar";
     $statement = $this->connection->prepare($sql);
     $statement->execute();
 
     $row = $statement->fetchAll();
-    if (!$row) {
-      throw new DomainException(sprintf('Type car not found: %s', ''));
-    }
     return $row;
   }
 }

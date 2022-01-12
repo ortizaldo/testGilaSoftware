@@ -5,6 +5,7 @@ return function (App $app) {
     $app->post('/user/new', \App\Action\UserCreateAction::class);
     
     $app->get('/car/all', \App\Action\CarAction\ListCarAction::class);
+    $app->get('/car/{id}', \App\Action\CarAction\ListCarByIdAction::class);
     $app->post('/car/new', \App\Action\CarAction\CreateCarAction::class);
     $app->patch('/car/{id}', \App\Action\CarAction\UpdateCarAction::class);
     $app->delete('/car/{id}', \App\Action\CarAction\DeleteCarAction::class);

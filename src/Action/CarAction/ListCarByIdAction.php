@@ -7,7 +7,7 @@ use PDOException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-final class ListCarAction
+final class ListCarByIdAction
 {
   private $car;
 
@@ -18,11 +18,12 @@ final class ListCarAction
 
   public function __invoke(
     ServerRequestInterface $request,
-    ResponseInterface $response
+    ResponseInterface $response,
+    array $args
   ): ResponseInterface {
     try {
       // Invoke the Domain with inputs and retain the result
-      $cars = $this->car->listCar();
+      $cars = $this->car->getCarId($args["id"]);
 
       // Transform the result into the JSON representation
       $result = [
